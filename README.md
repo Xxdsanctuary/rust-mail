@@ -1,6 +1,6 @@
 # rust-mail
 
-A Rust starter template for a production-oriented, multi-account email client targeting Linux first (with Windows and optional macOS support).
+A Rust starter template for a production-oriented, standalone desktop (non-web) multi-account email client targeting Linux first (with Windows and optional macOS support).
 
 ## What this template includes
 
@@ -29,7 +29,7 @@ A Rust starter template for a production-oriented, multi-account email client ta
 ## Requirement mapping
 
 - OAuth + Gmail/M365 + SMTP/IMAP: `Provider`, `MailProtocol`, `EmailClientTemplate::protocols_for`
-- Outlook/Apple-like UX target: modeled as template architecture baseline (UI implementation can be done with egui/Tauri/.NET frontend + Rust backend)
+- Outlook/Apple-like UX target: modeled as template architecture baseline for a native desktop app (for example: egui/iced/.NET desktop host + Rust backend)
 - Security verification/auth + Defender integration: `SecurityTemplate`
 - Calendar with account colors + overlap handling: `AccountTemplate::color_hex`, `CalendarBoard::overlapping_pairs`
 - Endpoint synchronization readiness: provider-aware account model and validation hooks
@@ -48,6 +48,6 @@ cargo run
 
 1. Add real OAuth token flows (Gmail + M365) with secure storage.
 2. Implement IMAP/SMTP clients and provider-specific sync workers.
-3. Build GUI shell (Tauri + web frontend, egui, or .NET host) that follows Outlook/Apple layouts.
+3. Build a native desktop GUI shell (egui, iced, or .NET desktop host) that follows Outlook/Apple layouts.
 4. Add calendar sync adapters (Google Calendar + Microsoft Graph).
 5. Add endpoint hardening (certificate pinning, malware scan hooks, audit logging).
