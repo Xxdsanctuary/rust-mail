@@ -5,8 +5,8 @@ fn main() {
 
     match template.validate() {
         Ok(()) => println!("rust-mail starter template is ready."),
-        Err(_error) => {
-            eprintln!("template validation failed");
+        Err(_) => {
+            eprintln!("template validation failed; check starter configuration");
             std::process::exit(1);
         }
     }
